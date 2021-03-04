@@ -21,39 +21,71 @@
 
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="datapegawai">
-                <div class="col-lg-12">
-                    <div class="card shadow">
-                        <div class="card-header bg-white border-bottom py-3">
-                            <h6 class="m-0 text-dark text-uppercase font-weight-bolder">Info Pegawai</h6>
-                        </div>
-                        <div class="card-body">
-                            <form action="" method="post" accept-charset="utf-8">
-                                <div class="row">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card card-info">
+                            <div class="card-header">
+                                <h3 class="card-title">Detail Pegawai</h3>
 
-                                    <div class="col-lg-9 mt-3">
-                                        <table class="table table-borderless table-striped table-responsive" style="font-size: 14px;">
-                                            <tr>
-                                                <td style="width: 10%;">NIP</td>
-                                                <td style="width: 1%;">:</td>
-                                                <td style="width: 29%;" class="text-capitalize">
-                                                </td>
-
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 15%;">Nama</td>
-                                                <td style="width: 1%;">:</td>
-                                                <td class="text-capitalize" style="width: 39%;">
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                    <div class="col-lg-3 m-0">
-                                        <img class="rounded-circle" style="width: 100%;" src="<?= base_url() ?>assets/img/logo.png" alt="foto.jpg">
-                                    </div>
+                                <div class="card-tools">
                                 </div>
-                            </form>
+                            </div>
+                            <div class="card-body p-0">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 150px">
+                                                <b>NIP</b>
+                                            </td>
+                                            <td>:
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 150px">
+                                                <b>Nama</b>
+                                            </td>
+                                            <td>:
+
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <div class="card-footer">
+                                    <a href="<?= base_url('datapegawai'); ?>" class="btn btn-warning">Kembali</a>
+
+                                    <a href="" target=" _blank" title="Cetak Data Pegawai" class="btn btn-primary">Print</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="card card-success">
+                            <div class="card-header">
+                                <center>
+                                    <h3 class="card-title">
+                                        Foto Pegawai
+                                    </h3>
+                                </center>
+
+                                <div class="card-tools">
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <img src="<?= base_url() ?>assets/img/logo.png" width="50%" />
+                                </div>
+
+                                <h3 class="profile-username text-center">
+
+                                    -
+
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="datapendidikan"></div>
@@ -62,5 +94,4 @@
             <div role="tabpanel" class="tab-pane" id="dokumen"></div>
         </div>
     </div>
-
 </div>
