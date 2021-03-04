@@ -54,8 +54,8 @@
                     </a>
                 </li>
                 <li class="nav-item my-3">
-                    <a href="#" class="nav-link text-danger">
-                        <i class="nav-icon fas fa-sign-out-alt"></i>
+                    <a href="<?= base_url(); ?>" class="nav-link text-danger" onclick="return confirm('Apakah anda yakin akan keluar?')">
+                        <i class="nav-icon far fa-circle"></i>
                         <p>Logout</p>
                     </a>
                 </li>

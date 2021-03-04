@@ -7,6 +7,7 @@ class Auth extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
+        $this->load->model('login');
     }
 
     public function index()
@@ -26,11 +27,16 @@ class Auth extends CI_Controller
     {
         $username = $this->input->post('username');
         $password = $this->input->post('password');
+        $where = array(
+            'username' => $username,
+            'password' => md5($password)
+        );
 
+        $cek = $this->login->cek_login('userlogin', $where)->num_rows();
         $user = $this->db->get_where('userlogin', ['username' => $username])->row_array();
 
         if ($user) {
-            if ($this->db->get('userlogin', ['password' => $password])) {
+            if ($cek) {
                 redirect('homepage');
             } else {
                 $this->session->set_flashdata('alert', '<div class="alert alert-danger" role="alert">
