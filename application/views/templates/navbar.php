@@ -1,7 +1,7 @@
 <div class="wrapper">
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-dark navbar-light elevation-2">
+    <nav class="main-header navbar navbar-expand navbar-dark navbar-light">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">

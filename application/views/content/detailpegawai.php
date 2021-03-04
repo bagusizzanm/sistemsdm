@@ -22,7 +22,7 @@
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="datapegawai">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-9">
                         <div class="card card-info">
                             <div class="card-header">
                                 <h3 class="card-title">Detail Pegawai</h3>
@@ -60,7 +60,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="card card-success">
                             <div class="card-header">
                                 <center>
@@ -74,14 +74,8 @@
                             </div>
                             <div class="card-body">
                                 <div class="text-center">
-                                    <img src="<?= base_url() ?>assets/img/logo.png" width="50%" />
+                                    <img src="<?= base_url() ?>assets/dist/img/avatar5.png" width="50%" />
                                 </div>
-
-                                <h3 class="profile-username text-center">
-
-                                    -
-
-                                </h3>
                             </div>
                         </div>
                     </div>

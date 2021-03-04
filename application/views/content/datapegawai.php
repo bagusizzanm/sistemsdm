@@ -16,7 +16,7 @@
     </div>
 
 
-    <div class="card card-info mx-3">
+    <div class="card card-blue mx-3">
         <div class="card-header ">
             <h2 class="card-title mt-2"><i class="fa fa-table"> </i> Data Pegawai</h2>
             <a href="<?= base_url('datapegawai/addPegawai'); ?>" class="btn btn-light float-right text-dark"><i class="fa fa-edit"></i> Tambah Data</a>
