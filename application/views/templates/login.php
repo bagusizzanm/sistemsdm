@@ -14,7 +14,7 @@
 
 <body>
 
-    <style>
+    <!-- <style>
         input[type="email"] {
             border-bottom-left-radius: 0px;
             border-bottom-right-radius: 0px;
@@ -23,31 +23,32 @@
         input[type="password"] {
             border-top-left-radius: 0px;
             border-top-right-radius: 0px;
-            border-top: 0px;
         }
-    </style>
+    </style> -->
 
-    <div class="text-center mt-5">
-        <form method="POST" action="<?= base_url('auth'); ?>" style="max-width: 380px; margin:auto;">
-            <img class="mt-4 mb-4" src="<?= base_url('assets/img/logo.png'); ?>" height="125" alt="fit logo">
-            <h1 class="h3 mb-3 font-weight-normal">Login</h1>
-            <?= $this->session->flashdata('alert'); ?>
-            <label>
-                <input type="text" name="username" id="username" class="form-control" placeholder="Username" value="<?= set_value('username'); ?>" autofocus>
-
-            </label>
-            <label for="password" class="sr-only">
-                <input type="password" name="password" class="form-control" placeholder="Password">
-            </label>
-            <small class="text-danger"><?= form_error('username'); ?></small>
-            <small class="text-danger"><?= form_error('password'); ?></small>
-            <div class="mt-3">
-                <button type="submit" name="submit" class="btn btn-lg btn-primary btn-block">
-                    Masuk
-                </button>
-            </div>
-        </form>
+    <div class="border border-danger container rounded pb-3" style="width: max-content; margin-top: 11em;">
+        <div class="text-center">
+            <form method="POST" action="<?= base_url('auth'); ?>" style="max-width: 380px; margin:auto;">
+                <img class="my-4" src="<?= base_url('assets/img/logo.png'); ?>" height="125" alt="fit logo">
+                <h1 class="h3 mb-3 font-weight-normal text-secondary">Login</h1>
+                <?= $this->session->flashdata('alert'); ?>
+                <label>
+                    <input type="text" name="username" id="username" class="form-control border border-gray" placeholder="Username" value="<?= set_value('username'); ?>" autofocus>
+                </label>
+                <label for="password" class="sr-only">
+                    <input type="password" name="password" class="form-control border border-gray" placeholder="Password">
+                </label>
+                <small class="text-danger"><?= form_error('username'); ?></small>
+                <small class="text-danger"><?= form_error('password'); ?></small>
+                <div class="my-3">
+                    <button type="submit" name="submit" class="btn btn-primary">
+                        Masuk
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 
