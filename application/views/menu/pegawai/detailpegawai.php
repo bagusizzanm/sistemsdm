@@ -53,7 +53,7 @@
                                     </tbody>
                                 </table>
                                 <div class="card-footer">
-                                    <a href="<?= base_url('datapegawai'); ?>" class="btn btn-warning">Kembali</a>
+                                    <a href="<?= base_url('pegawai'); ?>" class="btn btn-warning">Kembali</a>
 
                                     <a href="" target=" _blank" title="Cetak Data Pegawai" class="btn btn-primary">Print</a>
                                 </div>

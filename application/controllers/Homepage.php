@@ -25,7 +25,7 @@ class Homepage extends CI_Controller
         $this->load->view('templates/header');
         $this->load->view('templates/navbar');
         $this->load->view('templates/sidebar');
-        $this->load->view('content/dashboard');
+        $this->load->view('menu/dashboard/dashboard');
         $this->load->view('templates/footer');
     }
 }

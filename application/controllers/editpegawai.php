@@ -8,7 +8,7 @@ class Editpegawai extends CI_Controller
         $this->load->view('templates/header');
         $this->load->view('templates/navbar');
         $this->load->view('templates/sidebar');
-        $this->load->view('content/edit_pegawai');
+        $this->load->view('manu/pegawai/edit_pegawai');
         $this->load->view('templates/footer');
     }
 }

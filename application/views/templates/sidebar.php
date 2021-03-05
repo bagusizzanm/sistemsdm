@@ -33,7 +33,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="<?= base_url('datapegawai'); ?>" class="nav-link">
+                    <a href="<?= base_url('pegawai'); ?>" class="nav-link">
                         <i class="nav-icon fas fa-user-friends"></i>
                         <p>
                             Data Pegawai

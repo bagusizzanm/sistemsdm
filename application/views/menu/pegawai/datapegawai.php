@@ -19,7 +19,7 @@
     <div class="card card-blue mx-3">
         <div class="card-header ">
             <h2 class="card-title mt-2"><i class="fa fa-users"></i> Data Pegawai</h2>
-            <a href="<?= base_url('datapegawai/addPegawai'); ?>" class="btn btn-light float-right text-dark"><i class="fa fa-edit"></i> Tambah Data</a>
+            <a href="<?= base_url('pegawai/addPegawai'); ?>" class="btn btn-light float-right text-dark"><i class="fa fa-edit"></i> Tambah Data</a>
         </div>
         <!-- /.card-header -->
         <div class="card-body elevation-4">
@@ -47,11 +47,11 @@
                         <td></td>
                         <td></td>
                         <td class="row justify-content-center">
-                            <a href="<?= base_url('datapegawai/detailPegawai'); ?>" title="Detail" class="btn btn-info btn-sm mr-1">
+                            <a href="<?= base_url('pegawai/detailPegawai'); ?>" title="Detail" class="btn btn-info btn-sm mr-1">
                                 <i class="fa fa-eye"></i>
                             </a>
                             </a>
-                            <a href="<?= base_url('editpegawai'); ?>" title="Ubah" class="btn btn-success btn-sm mr-1">
+                            <a href="<?= base_url('pegawai/editPegawai'); ?>" title="Ubah" class="btn btn-success btn-sm mr-1">
                                 <i class="fa fa-edit"></i>
                             </a>
                             <a href="" onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn btn-danger btn-sm">
