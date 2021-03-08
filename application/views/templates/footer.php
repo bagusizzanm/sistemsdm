@@ -62,10 +62,11 @@
 
 
 <script>
-    $(function() {
+    $(document).ready(function() {
         $("#example1").DataTable({
+            "scrollX": true,
             "responsive": true,
-            "lengthChange": false,
+            "lengthChange": true,
             "autoWidth": false,
             "buttons": ["copy", "excel", "print", "colvis"]
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
