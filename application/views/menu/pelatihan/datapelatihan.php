@@ -3,11 +3,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Data Pelatihan</h1>
+                    <h1 class="ml-1"><i class="fa fa-users mr-2"></i>Data Pelatihan</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Pelatihan</a></li>
+                        <li class="breadcrumb-item"><a href="#" class="">Pelatihan</a></li>
                         <li class="breadcrumb-item active">List Data</li>
                     </ol>
                 </div><!-- /.col -->
@@ -18,8 +18,7 @@
 
     <div class="card card-lightblue mx-3">
         <div class="card-header ">
-            <h2 class="card-title mt-2"><i class="fa fa-users"></i> Data Pelatihan</h2>
-            <a href="<?= base_url('pelatihan'); ?>" class="btn btn-light float-right text-dark"><i class="fa fa-edit"></i> Tambah Data</a>
+            <a href="<?= base_url('pelatihan'); ?>" class="btn btn-light text-dark"><i class="fa fa-edit"></i> Tambah Data</a>
         </div>
         <!-- /.card-header -->
         <div class="card-body elevation-4">
@@ -63,7 +62,18 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>
+                        <td></td>
+                        <td></td>
+                    </tbody>
+
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.content-header
+<td>
                             <a href="" title="Detail" class="btn btn-info btn-sm mr-1">
                                 <i class="fa fa-eye"></i>
                             </a>
@@ -75,13 +85,4 @@
                             <a href="" onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn btn-danger btn-sm">
                                 <i class="fa fa-trash"></i>
                         </td>
-
-                    </tbody>
-
-                    </tfoot>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- /.content-header -->
+ -->

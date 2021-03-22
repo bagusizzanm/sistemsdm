@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Data Pegawai</h1>
+                    <h1 class="ml-1"><i class="fa fa-users mr-2"></i>Data Pegawai</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -18,8 +18,7 @@
 
     <div class="card card-blue mx-3">
         <div class="card-header ">
-            <h2 class="card-title mt-2"><i class="fa fa-users"></i> Data Pegawai</h2>
-            <a href="<?= base_url('pegawai/addPegawai'); ?>" class="btn btn-light float-right text-dark"><i class="fa fa-edit"></i> Tambah Data</a>
+            <a href="<?= base_url('pegawai/addPegawai'); ?>" class="btn btn-light text-dark"><i class="fa fa-edit"></i> Tambah Data</a>
         </div>
         <!-- /.card-header -->
         <div class="card-body elevation-4">
@@ -42,15 +41,15 @@
                     $no = 1;
                     foreach ($datapegawai as $row) { ?>
                         <tbody>
-                            <td style="text-align: center;"><?= $no++; ?></td>
-                            <td><?= $row->nip; ?></td>
-                            <td><?= $row->nama; ?></td>
-                            <td><?= $row->lokasi; ?></td>
-                            <td><?= $row->profesi; ?></td>
-                            <td><?= $row->jstruktur; ?></td>
-                            <td><?= $row->jfungsi; ?></td>
-                            <td><?= $row->status; ?></td>
-                            <td style="text-align: center;">
+                            <td style="text-align: center;background-color: white;"><?= $no++; ?></td>
+                            <td style="background-color: white;"><?= $row->nip; ?></td>
+                            <td style="background-color: white;"><?= $row->nama; ?></td>
+                            <td style="background-color: white;"><?= $row->lokasi; ?></td>
+                            <td style="background-color: white;"><?= $row->profesi; ?></td>
+                            <td style="background-color: white;"><?= $row->jstruktur; ?></td>
+                            <td style="background-color: white;"><?= $row->jfungsi; ?></td>
+                            <td style="background-color: white;"><?= $row->status; ?></td>
+                            <td style="text-align: center;background-color: white;">
                                 <a href="<?= base_url('pegawai/detailPegawai'); ?>" title="Detail" class="btn btn-info btn-sm mr-1">
                                     <i class="fa fa-eye"></i>
                                 </a>
