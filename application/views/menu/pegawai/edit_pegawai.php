@@ -81,7 +81,7 @@
             </div>
             <div class="card-footer">
                 <input type="submit" name="update" value="Update" class="btn btn-primary">
-                <a href="<?= base_url("pegawai"); ?>" title="Kembali" class="btn btn-danger">Batal</a>
+                <a href="<?= base_url("pegawai"); ?>" title="Kembali" class="btn btn-secondary">Batal</a>
             </div>
         </form>
     </div>

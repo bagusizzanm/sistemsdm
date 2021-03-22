@@ -26,42 +26,46 @@
             <div class="table-responsive">
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
-                        <tr class="table-primary">
+                        <tr class="table-primary" style="text-align: center;">
                             <th>No.</th>
                             <th>NIP</th>
                             <th>Nama</th>
                             <th>Lokasi Kerja</th>
+                            <th>Profesi</th>
                             <th>Jabatan Struktural</th>
                             <th>Jabatan Fungsional</th>
                             <th>Status Kepegawaian</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
+                    <?php
+                    $no = 1;
+                    foreach ($datapegawai as $row) { ?>
+                        <tbody>
+                            <td style="text-align: center;"><?= $no++; ?></td>
+                            <td><?= $row->nip; ?></td>
+                            <td><?= $row->nama; ?></td>
+                            <td><?= $row->lokasi; ?></td>
+                            <td><?= $row->profesi; ?></td>
+                            <td><?= $row->jstruktur; ?></td>
+                            <td><?= $row->jfungsi; ?></td>
+                            <td><?= $row->status; ?></td>
+                            <td style="text-align: center;">
+                                <a href="<?= base_url('pegawai/detailPegawai'); ?>" title="Detail" class="btn btn-info btn-sm mr-1">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a href="<?= base_url('pegawai/editPegawai'); ?>" title="Ubah" class="btn btn-success btn-sm mr-1">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <a href="" onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn btn-danger btn-sm">
+                                    <i class="fa fa-trash"></i>
+                            </td>
 
-                    <tbody>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="row justify-content-center">
-                            <a href="<?= base_url('pegawai/detailPegawai'); ?>" title="Detail" class="btn btn-info btn-sm mr-1">
-                                <i class="fa fa-eye"></i>
-                            </a>
-                            <a href="<?= base_url('pegawai/editPegawai'); ?>" title="Ubah" class="btn btn-success btn-sm mr-1">
-                                <i class="fa fa-edit"></i>
-                            </a>
-                            <a href="" onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn btn-danger btn-sm">
-                                <i class="fa fa-trash"></i>
-                        </td>
-                    </tbody>
-
-                    </tfoot>
+                        </tbody>
+                    <?php } ?>
                 </table>
             </div>
         </div>
     </div>
 </div>
-<!-- /.content-header -->
+<!-- /.content-header-->
