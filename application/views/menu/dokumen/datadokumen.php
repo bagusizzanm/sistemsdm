@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Dokumen Pegawai</h1>
+                    <h1 class="ml-1"><i class="fa fa-users mr-2"></i> Pegawai</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -18,8 +18,7 @@
 
     <div class="card card-green mx-3">
         <div class="card-header ">
-            <h2 class="card-title mt-2"><i class="fa fa-users"></i> Dokumen Pegawai</h2>
-            <a href="<?= base_url('dokumen'); ?>" class="btn btn-light float-right text-dark"><i class="fa fa-edit"></i> Tambah Data</a>
+            <a href="<?= base_url('dokumen'); ?>" class="btn btn-light text-dark"><i class="fa fa-edit"></i> Tambah Data</a>
         </div>
         <!-- /.card-header -->
         <div class="card-body elevation-4">
@@ -46,7 +45,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td class="row justify-content-center">
+                        <td class="text-center">
                             <a href="<?= base_url(''); ?>" title="Ubah" class="btn btn-success btn-sm mr-1">
                                 <i class="fa fa-edit"></i>
                             </a>
