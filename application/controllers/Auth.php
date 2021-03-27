@@ -7,7 +7,7 @@ class Auth extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
-        $this->load->model('login');
+        $this->load->model('M_login');
     }
 
     public function index()
@@ -32,7 +32,7 @@ class Auth extends CI_Controller
             'password' => md5($password)
         );
 
-        $cek = $this->login->cek_login('userlogin', $where)->num_rows();
+        $cek = $this->M_login->cek_login('userlogin', $where)->num_rows();
         $user = $this->db->get_where('userlogin', ['username' => $username])->row_array();
 
         if ($user) {
