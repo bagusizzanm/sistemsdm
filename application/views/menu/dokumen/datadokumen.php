@@ -23,9 +23,9 @@
         <!-- /.card-header -->
         <div class="card-body elevation-4">
             <div class="table-responsive">
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="example1" class="display table table-striped">
                     <thead>
-                        <tr class="table-primary">
+                        <tr class="table-primary" style="text-align: center;">
                             <th>NIP</th>
                             <th>Nama</th>
                             <th>Tipe Dokumen</th>
@@ -38,14 +38,14 @@
                     </thead>
 
                     <tbody>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="text-center">
+                        <td style="text-align: center;background-color: white;"></td>
+                        <td style="background-color: white;"></td>
+                        <td style="background-color: white;"></td>
+                        <td style="background-color: white;"></td>
+                        <td style="background-color: white;"></td>
+                        <td style="background-color: white;"></td>
+                        <td style="background-color: white;"></td>
+                        <td style="background-color: white; text-align: center;">
                             <a href="<?= base_url(''); ?>" title="Ubah" class="btn btn-success btn-sm mr-1">
                                 <i class="fa fa-edit"></i>
                             </a>

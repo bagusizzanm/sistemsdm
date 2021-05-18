@@ -72,6 +72,12 @@
             "buttons": ["copy", "excel", "print", "colvis"]
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     });
+
+    $(function() {
+        $('#datemask').inputmask('dd/mm/yyyy', {
+            'placeholder': 'dd/mm/yyyy'
+        });
+    })
 </script>
 
 </body>

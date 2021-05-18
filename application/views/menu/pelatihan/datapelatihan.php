@@ -45,7 +45,7 @@
                         <td style="background-color: white;"></td>
                         <td style="background-color: white;"></td>
                         <td style="background-color: white;"></td>
-                        <td style="text-align: center;background-color: white;">
+                        <td style="background-color: white;" class="text-center">
                             <a href="<?= base_url('pelatihan/'); ?>" title="Detail" class="btn btn-info btn-sm mr-1">
                                 <i class="fa fa-eye"></i>
                             </a>
