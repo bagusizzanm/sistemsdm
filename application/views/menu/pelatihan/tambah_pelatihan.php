@@ -110,7 +110,7 @@
 
             <div class="card-footer">
                 <a onclick="insertData()" type="submit" name="Simpan" class="btn btn-primary">Simpan</a>
-                <a href="<?= base_url("pelatihan"); ?>" title="Kembali" class="btn btn-secondary float-right">Batal</a>
+                <a href="<?= base_url("pelatihan"); ?>" title="Kembali" class="btn btn-default float-right">Batal</a>
             </div>
         </form>
 

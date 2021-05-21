@@ -30,7 +30,11 @@
 
                     </div>
                 </div>
-                <!-- <div class="row">
+
+                
+            </div>
+            <div role="tabpanel" class="tab-pane" id="datapendidikan">
+                <div class="row">
                     <div class="col-md-9">
                         <div class="card card-info">
                             <div class="card-header">
@@ -85,9 +89,9 @@
                         </div>
                     </div>
 
-                </div> -->
+                </div>
+
             </div>
-            <div role="tabpanel" class="tab-pane" id="datapendidikan"></div>
             <div role="tabpanel" class="tab-pane" id="datakeluarga"></div>
             <div role="tabpanel" class="tab-pane" id="datapelatihan"></div>
             <div role="tabpanel" class="tab-pane" id="dokumen"></div>

@@ -50,23 +50,26 @@
                                     </div>
                                 </div>
 
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 mb-2">
                                     <label>Jenis Kelamin</label>
-                                    <br>
-                                    <div class="form-check form-check-inline mt-2">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-                                        <label class="form-check-label" for="inlineRadio1">Laki-laki</label>
-                                    </div>
-
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
-                                        <label class="form-check-label" for="inlineRadio2">Perempuan</label>
-                                    </div>
+                                    <select name="status" id="status" class="form-control">
+                                        <option>--- Pilih ---</option>
+                                        <option>Laki-laki</option>
+                                        <option>Perempuan</option>
+                                    </select>
                                 </div>
 
                                 <div class="col-sm-6 mb-2">
                                     <label>Agama</label>
-                                    <input type="text" class="form-control" id="nama" name="nama" placeholder="Agama" required>
+                                    <select name="status" id="status" class="form-control">
+                                        <option>--- Pilih ---</option>
+                                        <option>Islam</option>
+                                        <option>Kristen</option>
+                                        <option>Hindu</option>
+                                        <option>Budha</option>
+                                        <option>Katholik</option>
+                                        <option>Konghucu</option>
+                                    </select>
                                 </div>
 
                                 <div class="col-sm-6 mb-2">
@@ -108,7 +111,16 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-graduation-cap"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" id="pendidikan" name="pendidikan" placeholder="Pendidikan Terakhir" required>
+
+                                        <select name="status" id="status" class="form-control">
+                                            <option>--- Pilih ---</option>
+                                            <option>SD/Sederajat</option>
+                                            <option>SMP/Sederajat</option>
+                                            <option>SMA/Sederajat</option>
+                                            <option>Sarjana</option>
+                                            <option>Pascasarjana</option>
+                                            <option>Doktor</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 mb-2">
@@ -117,18 +129,18 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-ring"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" id="statkawin" name="statkawin" placeholder="Status Perkawinan" required>
+                                        <!-- <input type="text" class="form-control" id="statkawin" name="statkawin" placeholder="Status Perkawinan" required> -->
+                                        <select name="status" id="status" class="form-control">
+                                            <option>--- Pilih ---</option>
+                                            <option>Kawin</option>
+                                            <option>Belum Kawin</option>
+                                            <option>Cerai</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group row mb-2">
-                                <div class="col-sm-6 mb-2">
-                                    <label>Status Perkawinan</label>
-                                    <input type="text" class="form-control" id="statkawin" name="statkawin" placeholder="Status Perkawinan" required>
-                                </div>
-
-
                                 <div class="col-sm-6 mb-2">
                                     <label>No. Telp</label>
                                     <div class="input-group mb-3">
@@ -163,16 +175,12 @@
                                         <input type="text" class="form-control" placeholder="Email">
                                     </div>
                                 </div>
-
-
-
-
                             </div>
                         </div>
 
                         <div class="card-footer">
                             <a onclick="insertData()" type="submit" name="Simpan" class="btn btn-primary">Simpan</a>
-                            <a href="<?= base_url("pegawai"); ?>" title="Kembali" class="btn btn-secondary float-right">Batal</a>
+                            <a href="<?= base_url("pegawai"); ?>" title="Kembali" class="btn btn-default float-right">Batal</a>
                         </div>
                     </form>
                 </div>
@@ -211,16 +219,6 @@
                             <div class="form-group row mb-2">
 
                                 <div class="col-sm-6 mb-2">
-                                    <label>Status Perkawinan</label>
-                                    <input type="text" class="form-control" id="statkawin" name="statkawin" placeholder="Status Perkawinan" required>
-                                </div>
-
-                                <div class="col-sm-6 mb-2">
-                                    <label>No. Telp</label>
-                                    <input type="text" class="form-control" id="notelp" name="notelp" placeholder="No. Telp" required>
-                                </div>
-
-                                <div class="col-sm-6 mb-2">
                                     <label>No. NPWP</label>
                                     <input type="text" class="form-control" id="no_npwp" name="no_npwp" placeholder="No. NPWP" required>
                                 </div>
@@ -234,7 +232,6 @@
                                     <label>Alamat Email Pribadi</label>
                                     <input type="text" class="form-control" id="emailpribadi" name="emailpribadi" placeholder="Alamat Email Pribadi" required>
                                 </div>
-
                                 <div class="col-sm-6 mb-2">
                                     <label>Upload Foto</label>
                                     <div class="input-group mb-3">
@@ -249,19 +246,74 @@
 
                         <div class="card-footer">
                             <a onclick="insertData()" type="submit" name="Simpan" class="btn btn-primary">Simpan</a>
-                            <a href="<?= base_url("pegawai"); ?>" title="Kembali" class="btn btn-secondary float-right">Batal</a>
+                            <a href="<?= base_url("pegawai"); ?>" title="Kembali" class="btn btn-default float-right">Batal</a>
                         </div>
                     </form>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="databank"></div>
-                <div role="tabpanel" class="tab-pane" id="datapelatihan"></div>
-                <div role="tabpanel" class="tab-pane" id="datakeluarga"></div>
+
+
+                <div role="tabpanel" class="tab-pane" id="databank">
+                    <form action="<?= base_url('pegawai/insertPegawai'); ?>" method="post" enctype="multipart/form-data">
+                        <div class="card-body">
+                            <div class="col-sm-6 mb-2">
+                                <label>Nama Bank</label>
+                                <input type="text" class="form-control" id="namabank" name="namabank" placeholder="Nama Bank" required>
+                            </div>
+                            <div class="col-sm-6 mb-2">
+                                <label>Nama Cabang</label>
+                                <input type="text" class="form-control" id="namacabang" name="namacabang" placeholder="Nama Cabang" required>
+                            </div>
+
+                            <div class="col-sm-6 mb-2">
+                                <label>No Rekening</label>
+                                <input type="text" class="form-control" id="norek" name="norek" placeholder="No Rekening" required>
+                            </div>
+                            <div class="col-sm-6 mb-2">
+                                <label>Nama dalam Rekening</label>
+                                <input type="text" class="form-control" id="namarek" name="namarek" placeholder="Nama dalam Rekening" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="datapendidikan">
+                    <form action="<?= base_url('pegawai/insertPegawai'); ?>" method="post" enctype="multipart/form-data">
+                        <div class="card-body">
+                            <div class="col-sm-6 mb-2">
+                                <label>Nama Institusi</label>
+                                <input type="text" class="form-control" id="namainstitut" name="namainstitut" placeholder="Nama Institusi" required>
+                            </div>
+                            <div class="col-sm-6 mb-2">
+                                <label>Tingkat</label>
+                                <input type="text" class="form-control" id="tingkat" name="tingkat" placeholder="Tingkat" required>
+                            </div>
+                            <div class="col-sm-6 mb-2">
+                                <label>Program Studi</label>
+                                <input type="text" class="form-control" id="prodi" name="prodi" placeholder="Program Studi" required>
+                            </div>
+                            <div class="col-sm-6 mb-2">
+                                <label>Tanggal Lulus</label>
+                                <input type="text" class="form-control" id="tgl_lulus" name="tgl_lulus" placeholder="Tanggal Lulus" required>
+                            </div>
+                            <div class="col-sm-6 mb-2">
+                                <label>IPK</label>
+                                <input type="number" class="form-control" id="ipk" name="ipk" placeholder="IPK" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div role="tabpanel" class="tab-pane" id="datakeluarga">
+
+                </div>
+
             </div>
+
         </div>
 
-
-
     </div>
+
 </div>
 
 <script>
