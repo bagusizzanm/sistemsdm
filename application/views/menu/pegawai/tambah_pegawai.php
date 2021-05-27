@@ -273,6 +273,10 @@
                                 <input type="text" class="form-control" id="namarek" name="namarek" placeholder="Nama dalam Rekening" required>
                             </div>
                         </div>
+                        <div class="card-footer">
+                            <a onclick="insertData()" type="submit" name="Simpan" class="btn btn-primary">Simpan</a>
+                            <a href="<?= base_url("pegawai"); ?>" title="Kembali" class="btn btn-default float-right">Batal</a>
+                        </div>
                     </form>
                 </div>
 
@@ -284,9 +288,25 @@
                                 <input type="text" class="form-control" id="namainstitut" name="namainstitut" placeholder="Nama Institusi" required>
                             </div>
                             <div class="col-sm-6 mb-2">
-                                <label>Tingkat</label>
-                                <input type="text" class="form-control" id="tingkat" name="tingkat" placeholder="Tingkat" required>
-                            </div>
+                                    <label>Tingkat</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-graduation-cap"></i></span>
+                                        </div>
+
+                                        <select name="status" id="status" class="form-control">
+                                            <option>--- Pilih ---</option>
+                                            <option>SMA/Sederajat</option>
+                                            <option>D1</option>
+                                            <option>D2</option>
+                                            <option>D3</option>
+                                            <option>D4</option>
+                                            <option>Sarjana</option>
+                                            <option>Pascasarjana</option>
+                                            <option>Doktor</option>
+                                        </select>
+                                    </div>
+                                </div>
                             <div class="col-sm-6 mb-2">
                                 <label>Program Studi</label>
                                 <input type="text" class="form-control" id="prodi" name="prodi" placeholder="Program Studi" required>
@@ -299,6 +319,28 @@
                                 <label>IPK</label>
                                 <input type="number" class="form-control" id="ipk" name="ipk" placeholder="IPK" required>
                             </div>
+                        </div>
+                        <div class="col-sm-6 mb-2">
+                                <label>Upload Ijazah</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-file-image"></i></span>
+                                    </div>
+                                    <input type="file" class="form-control" id="customFile" />
+                                </div>
+                         </div>
+                         <div class="col-sm-6 mb-2">
+                                <label>Upload Transkrip</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-file-image"></i></span>
+                                    </div>
+                                    <input type="file" class="form-control" id="customFile" />
+                                </div>
+                        </div>
+                        <div class="card-footer">
+                            <a onclick="insertData()" type="submit" name="Simpan" class="btn btn-primary">Simpan</a>
+                            <a href="<?= base_url("pegawai"); ?>" title="Kembali" class="btn btn-default float-right">Batal</a>
                         </div>
                     </form>
                 </div>
