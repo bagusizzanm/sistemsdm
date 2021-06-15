@@ -347,6 +347,126 @@
 
 
                 <div role="tabpanel" class="tab-pane" id="datakeluarga">
+                <div class="content">
+            <ul class="nav nav-stacked md-tabs nav-tabs ">
+                <li class="nav-item waves-effect waves-light" role="presentation">
+                    <a class="nav-link active" href="#istri" data-toggle="tab">Data Istri</a>
+                </li>
+                <li class="nav-item waves-effect waves-light">
+                    <a class="nav-link " href="#orangtua1" data-toggle="tab">Data Bapak</a>
+                </li>
+                <li class="nav-item waves-effect waves-light">
+                    <a class="nav-link" href="#orangtua2" data-toggle="tab">Data Ibu</a>
+                </li>
+                <li class="nav-item waves-effect waves-light">
+                    <a class="nav-link" href="#dataanak1" data-toggle="tab">Data anak ke-1</a>
+                </li>
+                <li class="nav-item waves-effect waves-light">
+                    <a class="nav-link" href="#dataanak2" data-toggle="tab">Data anak ke-2</a>
+                </li>
+                <li class="nav-item waves-effect waves-light">
+                    <a class="nav-link" href="#dataanak3" data-toggle="tab">Data anak ke-3</a>
+                </li>
+                <li class="nav-item waves-effect waves-light">
+                    <a class="nav-link" href="#dataanak4" data-toggle="tab">Data anak ke-4</a>
+                </li>
+                <li class="nav-item waves-effect waves-light">
+                    <a class="nav-link" href="#dataanak5" data-toggle="tab">Data anak ke-5</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="istri">
+
+<form action="<?= base_url('pegawai/insertPegawai'); ?>" method="post" enctype="multipart/form-data">
+
+    <div class="card-body">
+
+        <div class="form-group row mb-2">
+
+            <div class="col-sm-6 mb-2">
+                <label>Nama Lengkap</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Nama Lengkap">
+                </div>
+            </div>
+
+            <div class="col-sm-6 mb-2">
+                <label>Jenis Kelamin</label>
+                <select name="status" id="status" class="form-control">
+                    <option>--- Pilih ---</option>
+                    <option>Laki-laki</option>
+                    <option>Perempuan</option>
+                </select>
+            </div>
+
+            <div class="col-sm-6 mb-2">
+                <label>Agama</label>
+                <select name="status" id="status" class="form-control">
+                    <option>--- Pilih ---</option>
+                    <option>Islam</option>
+                    <option>Kristen</option>
+                    <option>Hindu</option>
+                    <option>Budha</option>
+                    <option>Katholik</option>
+                    <option>Konghucu</option>
+                </select>
+            </div>
+
+            <div class="col-sm-6 mb-2">
+                <label>Tempat Lahir</label>
+                <input type="text" class="form-control" id="tempatlahir" name="tempatlahir" placeholder="Tempat Lahir" required>
+            </div>
+
+            <script type="text/javascript">
+                $(function() {
+                    $('.date').datepicker({
+                        format: "dd/mm/yyyy"
+                    });
+                });
+            </script>
+
+            <div class="col-sm-6 mb-2">
+                <label>Tanggal Lahir</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                    <input placeholder="dd/mm/yyyy" type="text" name="ttl" id="dateInput" class="form-control date" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                </div>
+            </div>
+            <div class="col-sm-6 mb-2">
+                <label>Pekerjaan</label>
+                <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Pekerjaan" required>
+            </div>
+        </div>
+
+        <div class="form-group row mb-2">
+            <div class="col-sm-6 mb-2">
+                <label>Upload KK/Akta Lahir</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-file-image"></i></span>
+                        </div>
+                        <input type="file" class="form-control" id="customFile" />
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    <div class="card-footer">
+        <a onclick="insertData()" type="submit" name="Simpan" class="btn btn-primary">Simpan</a>
+        <a href="<?= base_url("pegawai"); ?>" title="Kembali" class="btn btn-default float-right">Batal</a>
+    </div>
+</form>
+</div>
+            
+            
+            
+            
+            </div>
+            </div>
+
+
 
                 </div>
 
