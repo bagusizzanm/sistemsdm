@@ -11,472 +11,334 @@
                 <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-remove"></i></button>
             </div>
         </div>
-        <div class="content">
-            <ul class="nav nav-stacked md-tabs nav-tabs ">
-                <li class="nav-item waves-effect waves-light" role="presentation">
-                    <a class="nav-link active" href="#datapribadi" data-toggle="tab">Data Pribadi</a>
-                </li>
-                <li class="nav-item waves-effect waves-light">
-                    <a class="nav-link " href="#datakepegawaian" data-toggle="tab">Data Kepegawaian</a>
-                </li>
-                <li class="nav-item waves-effect waves-light">
-                    <a class="nav-link" href="#databank" data-toggle="tab">Data Bank</a>
-                </li>
-                <li class="nav-item waves-effect waves-light">
-                    <a class="nav-link" href="#datapendidikan" data-toggle="tab">Data Pendidikan</a>
-                </li>
-                <li class="nav-item waves-effect waves-light">
-                    <a class="nav-link" href="#datakeluarga" data-toggle="tab">Data Keluarga</a>
-                </li>
-            </ul>
+        <div class="card-body">
+            <form method="post" action="<?= base_url('Pegawai/p_add_pegawai')?>" enctype="multipart/form-data"> 
+                    <div class="row">
+                     
+                        <div class="col-md-6">
+                                <div class="card card-info">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Detail Pegawai</h3>
 
-            <div class="tab-content">
-
-                <div role="tabpanel" class="tab-pane active" id="datapribadi">
-
-                    <form action="<?= base_url('pegawai/insertPegawai'); ?>" method="post" enctype="multipart/form-data">
-
-                        <div class="card-body">
-
-                            <div class="form-group row mb-2">
-
-                                <div class="col-sm-6 mb-2">
-                                    <label>No. KTP</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-address-card"></i></span>
+                                        <div class="card-tools">
                                         </div>
-                                        <input type="text" class="form-control" placeholder="No. KTP">
                                     </div>
-                                </div>
+                                    <div class="card-body p-0">
+                                        <table class="table">
+                                            <tbody>
 
-                                <div class="col-sm-6 mb-2">
-                                    <label>Jenis Kelamin</label>
-                                    <select name="status" id="status" class="form-control">
-                                        <option>--- Pilih ---</option>
-                                        <option>Laki-laki</option>
-                                        <option>Perempuan</option>
-                                    </select>
-                                </div>
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>No NIP</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_nip" name="att_nip" required oninvalid="this.setCustomValidity('Data ini tidak boleh kosong')" oninput="setCustomValidity('')">
+                                                        <!-- Mau required copast ini : required oninvalid="this.setCustomValidity('Data ini tidak boleh kosong')" oninput="setCustomValidity('')" -->
+                                                    </td>
+                                                </tr>
 
-                                <div class="col-sm-6 mb-2">
-                                    <label>Agama</label>
-                                    <select name="status" id="status" class="form-control">
-                                        <option>--- Pilih ---</option>
-                                        <option>Islam</option>
-                                        <option>Kristen</option>
-                                        <option>Hindu</option>
-                                        <option>Budha</option>
-                                        <option>Katholik</option>
-                                        <option>Konghucu</option>
-                                    </select>
-                                </div>
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Nama Lengkap dan Gelar</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_nama" name="att_nama">
+                                                        <!-- Mau required copast ini : required oninvalid="this.setCustomValidity('Data ini tidak boleh kosong')" oninput="setCustomValidity('')" -->
+                                                    </td>
+                                                </tr>
 
-                                <div class="col-sm-6 mb-2">
-                                    <label>Tempat Lahir</label>
-                                    <input type="text" class="form-control" id="tempatlahir" name="tempatlahir" placeholder="Tempat Lahir" required>
-                                </div>
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Foto</b>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" class="form-control-file" id="att_foto" name='att_foto'>
+                                                        <!-- Mau required copast ini : required oninvalid="this.setCustomValidity('Data ini tidak boleh kosong')" oninput="setCustomValidity('')" -->
+                                                    </td>
+                                                </tr>
 
-                                <script type="text/javascript">
-                                    $(function() {
-                                        $('.date').datepicker({
-                                            format: "dd/mm/yyyy"
-                                        });
-                                    });
-                                </script>
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>No KTP</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_ktp" name="att_ktp">
+                                                        <!-- Mau required copast ini : required oninvalid="this.setCustomValidity('Data ini tidak boleh kosong')" oninput="setCustomValidity('')" -->
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Agama</b>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <select class="form-control" id="att_agama" name="att_agama">
+                                                                <?php 
+                                                                    echo "<option value='Islam' >Islam</option>";
+                                                                    echo "<option value='Kristen Protestan' >Kristen Protestan</option>";
+                                                                    echo "<option value='Katolik' >Katolik</option>";
+                                                                    echo "<option value='Hindu' >Hindu</option>";
+                                                                    echo "<option value='Budha' >Budha</option>";
+                                                                    echo "<option value='Kong Hu Cu' >Kong Hu Cu</option>";
+                                                                    
+                                                                ?>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Tempat Lahir</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_tempat_lahir" name="att_tempat_lahir" >
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Tanggal Lahir</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="date" id="att_tgl_lahir" name="att_tgl_lahir">
+                                                    </td>
+                                                </tr>
 
-                                <div class="col-sm-6 mb-2">
-                                    <label>Tanggal Lahir</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                                        </div>
-                                        <input placeholder="dd/mm/yyyy" type="text" name="ttl" id="dateInput" class="form-control date" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Jenis Kelamin</b>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <select class="form-control" id="att_jenis_kelamin" name="att_jenis_kelamin">
+                                                                <option value='0'>Perempuan</option>
+                                                                <option value='1' >Laki-Laki</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Pendidikan Terakhir</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_pendidikan_terakhir" name="att_pendidikan_terakhir" >
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Status Perkawinan</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_status_pernikahan" name="att_status_pernikahan" >
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Alamat</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_alamat" name="att_alamat" >
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>No Telp</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_telp" name="att_telp" >
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>No NPWP</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_npwp" name="att_npwp" >
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Email TASS</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_email_tass" name="att_email_tass" >
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Email Pribadi</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_email_pribadi" name="att_email_pribadi" >
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
                                     </div>
-                                </div>
-                                <div class="col-sm-6 mb-2">
-                                    <label>Alamat</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control" placeholder="Alamat">
-                                    </div>
-                                </div>
-
-
-                                <div class="col-sm-6 mb-2">
-                                    <label>Pendidikan Terakhir</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-graduation-cap"></i></span>
-                                        </div>
-
-                                        <select name="status" id="status" class="form-control">
-                                            <option>--- Pilih ---</option>
-                                            <option>SD/Sederajat</option>
-                                            <option>SMP/Sederajat</option>
-                                            <option>SMA/Sederajat</option>
-                                            <option>Sarjana</option>
-                                            <option>Pascasarjana</option>
-                                            <option>Doktor</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 mb-2">
-                                    <label>Status Perkawinan</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-ring"></i></span>
-                                        </div>
-                                        <!-- <input type="text" class="form-control" id="statkawin" name="statkawin" placeholder="Status Perkawinan" required> -->
-                                        <select name="status" id="status" class="form-control">
-                                            <option>--- Pilih ---</option>
-                                            <option>Kawin</option>
-                                            <option>Belum Kawin</option>
-                                            <option>Cerai</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group row mb-2">
-                                <div class="col-sm-6 mb-2">
-                                    <label>No. Telp</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control" placeholder="No. Telp">
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 mb-2">
-                                    <label>No. NPWP</label>
-                                    <input type="text" class="form-control" id="alamat" name="alamat" placeholder="No. NPWP" required>
-                                </div>
-
-                                <div class="col-sm-6 mb-2">
-                                    <label>Alamat Email TASS</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control" placeholder="Email">
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 mb-2">
-                                    <label>Alamat Email Pribadi</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">@</span>
-                                        </div>
-                                        <input type="text" class="form-control" placeholder="Email">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card-footer">
-                            <a onclick="insertData()" type="submit" name="Simpan" class="btn btn-primary">Simpan</a>
-                            <a href="<?= base_url("pegawai"); ?>" title="Kembali" class="btn btn-default float-right">Batal</a>
-                        </div>
-                    </form>
-                </div>
-
-                <div role="tabpanel" class="tab-pane" id="datakepegawaian">
-                    <form action="<?= base_url('pegawai/insertPegawai'); ?>" method="post" enctype="multipart/form-data">
-                        <div class="card-body">
-                            <div class="form-group row mb-2">
-                                <div class="col-sm-6 mb-2">
-                                    <label>NIP</label>
-                                    <input type="text" class="form-control" id="nip" name="nip" placeholder="NIP" required>
-                                </div>
-
-                                <div class="col-sm-6 mb-2">
-                                    <label>Profesi</label>
-                                    <input type="text" class="form-control" id="profesi" name="profesi" placeholder="Profesi" required>
-                                </div>
-
-                                <div class="col-sm-6 mb-2">
-                                    <label>Tanggal Rekruitment</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                                        </div>
-                                        <input type="text" id="datepicker" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 mb-2">
-                                    <label>Durasi Kerja</label>
-                                    <input type="text" class="form-control" id="durasi" name="durasi" placeholder="Durasi Kerja" required>
-                                </div>
-
-                            </div>
-
-                            <div class="form-group row mb-2">
-
-                                <div class="col-sm-6 mb-2">
-                                    <label>No. NPWP</label>
-                                    <input type="text" class="form-control" id="no_npwp" name="no_npwp" placeholder="No. NPWP" required>
-                                </div>
-
-                                <div class="col-sm-6 mb-2">
-                                    <label>Alamat Email TASS</label>
-                                    <input type="text" class="form-control" id="emailtass" name="emailtass" placeholder="Alamat Email TASS" required>
-                                </div>
-
-                                <div class="col-sm-6 mb-2">
-                                    <label>Alamat Email Pribadi</label>
-                                    <input type="text" class="form-control" id="emailpribadi" name="emailpribadi" placeholder="Alamat Email Pribadi" required>
-                                </div>
-                                <div class="col-sm-6 mb-2">
-                                    <label>Upload Foto</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-file-image"></i></span>
-                                        </div>
-                                        <input type="file" class="form-control" id="customFile" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card-footer">
-                            <a onclick="insertData()" type="submit" name="Simpan" class="btn btn-primary">Simpan</a>
-                            <a href="<?= base_url("pegawai"); ?>" title="Kembali" class="btn btn-default float-right">Batal</a>
-                        </div>
-                    </form>
-                </div>
-
-
-                <div role="tabpanel" class="tab-pane" id="databank">
-                    <form action="<?= base_url('pegawai/insertPegawai'); ?>" method="post" enctype="multipart/form-data">
-                        <div class="card-body">
-                            <div class="col-sm-6 mb-2">
-                                <label>Nama Bank</label>
-                                <input type="text" class="form-control" id="namabank" name="namabank" placeholder="Nama Bank" required>
-                            </div>
-                            <div class="col-sm-6 mb-2">
-                                <label>Nama Cabang</label>
-                                <input type="text" class="form-control" id="namacabang" name="namacabang" placeholder="Nama Cabang" required>
-                            </div>
-
-                            <div class="col-sm-6 mb-2">
-                                <label>No Rekening</label>
-                                <input type="text" class="form-control" id="norek" name="norek" placeholder="No Rekening" required>
-                            </div>
-                            <div class="col-sm-6 mb-2">
-                                <label>Nama dalam Rekening</label>
-                                <input type="text" class="form-control" id="namarek" name="namarek" placeholder="Nama dalam Rekening" required>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a onclick="insertData()" type="submit" name="Simpan" class="btn btn-primary">Simpan</a>
-                            <a href="<?= base_url("pegawai"); ?>" title="Kembali" class="btn btn-default float-right">Batal</a>
-                        </div>
-                    </form>
-                </div>
-
-                <div role="tabpanel" class="tab-pane" id="datapendidikan">
-                    <form action="<?= base_url('pegawai/insertPegawai'); ?>" method="post" enctype="multipart/form-data">
-                        <div class="card-body">
-                            <div class="col-sm-6 mb-2">
-                                <label>Nama Institusi</label>
-                                <input type="text" class="form-control" id="namainstitut" name="namainstitut" placeholder="Nama Institusi" required>
-                            </div>
-                            <div class="col-sm-6 mb-2">
-                                    <label>Tingkat</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-graduation-cap"></i></span>
-                                        </div>
-
-                                        <select name="status" id="status" class="form-control">
-                                            <option>--- Pilih ---</option>
-                                            <option>SMA/Sederajat</option>
-                                            <option>D1</option>
-                                            <option>D2</option>
-                                            <option>D3</option>
-                                            <option>D4</option>
-                                            <option>Sarjana</option>
-                                            <option>Pascasarjana</option>
-                                            <option>Doktor</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            <div class="col-sm-6 mb-2">
-                                <label>Program Studi</label>
-                                <input type="text" class="form-control" id="prodi" name="prodi" placeholder="Program Studi" required>
-                            </div>
-                            <div class="col-sm-6 mb-2">
-                                <label>Tanggal Lulus</label>
-                                <input type="text" class="form-control" id="tgl_lulus" name="tgl_lulus" placeholder="Tanggal Lulus" required>
-                            </div>
-                            <div class="col-sm-6 mb-2">
-                                <label>IPK</label>
-                                <input type="number" class="form-control" id="ipk" name="ipk" placeholder="IPK" required>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 mb-2">
-                                <label>Upload Ijazah</label>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-file-image"></i></span>
-                                    </div>
-                                    <input type="file" class="form-control" id="customFile" />
-                                </div>
-                         </div>
-                         <div class="col-sm-6 mb-2">
-                                <label>Upload Transkrip</label>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-file-image"></i></span>
-                                    </div>
-                                    <input type="file" class="form-control" id="customFile" />
                                 </div>
                         </div>
-                        <div class="card-footer">
-                            <a onclick="insertData()" type="submit" name="Simpan" class="btn btn-primary">Simpan</a>
-                            <a href="<?= base_url("pegawai"); ?>" title="Kembali" class="btn btn-default float-right">Batal</a>
+                        <div class="col-md-6">
+                                <div class="card card-info">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Detail Kepegawaian</h3>
+
+                                        <div class="card-tools">
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Profesi</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_profesi" name="att_profesi" >
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Tanggal Rekruitment</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="date" id="att_tgl_requitment" name="att_tgl_requitment" >
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Durasi Kerja</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_durasi_kerja" name="att_durasi_kerja" >
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Jabatan Fungsional</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_jabatan_fungsional" name="att_jabatan_fungsional" >
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Jabatan Struktural</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_jabatan_stuktural" name="att_jabatan_stuktural" >
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Lokasi Kerja</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_lokasi_kerja" name="att_lokasi_kerja" >
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>No BPJS Kesehatan</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_bpjs_kesehatan" name="att_bpjs_kesehatan">
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>No BPJS Ketenagakerjaan</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_bpjs_ketenagakerjaan" name="att_bpjs_ketenagakerjaan" >
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Status Kepegawaian</b>
+                                                    </td>
+                                                    <td>
+                                                         <select class="form-control" id="att_status" name="att_status">
+                                                                <option value='Aktif'>Aktif</option>
+                                                                <option value='Tidak Aktif' >Tidak Aktif</option>
+                                                            </select>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
                         </div>
-                    </form>
-                </div>
+                        <div class="col-md-12">
+                                <div class="card card-info">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Detail Bank</h3>
 
+                                        <div class="card-tools">
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Nama Bank</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_bank" name="att_bank" >
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Nama Cabang</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_cabang" name="att_cabang" >
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>No Rekening</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_rekening" name="att_rekening" >
+                                                    </td>
+                                                </tr>
 
-                <div role="tabpanel" class="tab-pane" id="datakeluarga">
-                <div class="content">
-            <ul class="nav nav-stacked md-tabs nav-tabs ">
-                <li class="nav-item waves-effect waves-light" role="presentation">
-                    <a class="nav-link active" href="#istri" data-toggle="tab">Data Istri</a>
-                </li>
-                <li class="nav-item waves-effect waves-light">
-                    <a class="nav-link " href="#orangtua1" data-toggle="tab">Data Bapak</a>
-                </li>
-                <li class="nav-item waves-effect waves-light">
-                    <a class="nav-link" href="#orangtua2" data-toggle="tab">Data Ibu</a>
-                </li>
-                <li class="nav-item waves-effect waves-light">
-                    <a class="nav-link" href="#dataanak1" data-toggle="tab">Data anak ke-1</a>
-                </li>
-                <li class="nav-item waves-effect waves-light">
-                    <a class="nav-link" href="#dataanak2" data-toggle="tab">Data anak ke-2</a>
-                </li>
-                <li class="nav-item waves-effect waves-light">
-                    <a class="nav-link" href="#dataanak3" data-toggle="tab">Data anak ke-3</a>
-                </li>
-                <li class="nav-item waves-effect waves-light">
-                    <a class="nav-link" href="#dataanak4" data-toggle="tab">Data anak ke-4</a>
-                </li>
-                <li class="nav-item waves-effect waves-light">
-                    <a class="nav-link" href="#dataanak5" data-toggle="tab">Data anak ke-5</a>
-                </li>
-            </ul>
-            <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="istri">
+                                                <tr>
+                                                    <td style="width: 150px">
+                                                        <b>Nama Dalam Rekening</b>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" id="att_a_n_rekening" name="att_a_n_rekening" >
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
 
-<form action="<?= base_url('pegawai/insertPegawai'); ?>" method="post" enctype="multipart/form-data">
-
-    <div class="card-body">
-
-        <div class="form-group row mb-2">
-
-            <div class="col-sm-6 mb-2">
-                <label>Nama Lengkap</label>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Nama Lengkap">
-                </div>
-            </div>
-
-            <div class="col-sm-6 mb-2">
-                <label>Jenis Kelamin</label>
-                <select name="status" id="status" class="form-control">
-                    <option>--- Pilih ---</option>
-                    <option>Laki-laki</option>
-                    <option>Perempuan</option>
-                </select>
-            </div>
-
-            <div class="col-sm-6 mb-2">
-                <label>Agama</label>
-                <select name="status" id="status" class="form-control">
-                    <option>--- Pilih ---</option>
-                    <option>Islam</option>
-                    <option>Kristen</option>
-                    <option>Hindu</option>
-                    <option>Budha</option>
-                    <option>Katholik</option>
-                    <option>Konghucu</option>
-                </select>
-            </div>
-
-            <div class="col-sm-6 mb-2">
-                <label>Tempat Lahir</label>
-                <input type="text" class="form-control" id="tempatlahir" name="tempatlahir" placeholder="Tempat Lahir" required>
-            </div>
-
-            <script type="text/javascript">
-                $(function() {
-                    $('.date').datepicker({
-                        format: "dd/mm/yyyy"
-                    });
-                });
-            </script>
-
-            <div class="col-sm-6 mb-2">
-                <label>Tanggal Lahir</label>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                    </div>
-                    <input placeholder="dd/mm/yyyy" type="text" name="ttl" id="dateInput" class="form-control date" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
-                </div>
-            </div>
-            <div class="col-sm-6 mb-2">
-                <label>Pekerjaan</label>
-                <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Pekerjaan" required>
-            </div>
-        </div>
-
-        <div class="form-group row mb-2">
-            <div class="col-sm-6 mb-2">
-                <label>Upload KK/Akta Lahir</label>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-file-image"></i></span>
-                        </div>
-                        <input type="file" class="form-control" id="customFile" />
+                                <center>
+                                    <button type="submit" class="btn btn-primary mb-2" onclick="return confirm('Apakah Anda yakin menambahkan data pegawai ini ?')">Tambah Data</button>
+                                </center>
                         </div>
                     </div>
+                </form>
             </div>
         </div>
-
-    <div class="card-footer">
-        <a onclick="insertData()" type="submit" name="Simpan" class="btn btn-primary">Simpan</a>
-        <a href="<?= base_url("pegawai"); ?>" title="Kembali" class="btn btn-default float-right">Batal</a>
     </div>
-</form>
-</div>
-            
-            
-            
-            
-            </div>
-            </div>
-
-
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
 
 <script>
     function insertData() {

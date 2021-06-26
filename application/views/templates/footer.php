@@ -60,7 +60,7 @@
 <script src="<?= base_url(); ?>assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="<?= base_url(); ?>assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script src="<?= base_url(); ?>assets/plugins/sweetalert2/sweetalert2.all.min.js"></script>
-<script src="<?= base_url(); ?>assets/pluginsplugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<!-- <script src="<?= base_url(); ?>assets/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script> -->
 
 <script>
     $(document).ready(function() {
@@ -73,11 +73,102 @@
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     });
 
+    $(document).ready(function() {
+        $("#example2").DataTable({
+            "scrollX": true,
+            "responsive": true,
+            "lengthChange": true,
+            "autoWidth": false,
+            "buttons": ["copy", "excel", "print", "colvis"]
+        }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
+    });
+
+    $(document).ready(function() {
+        $("#example3").DataTable({
+            "scrollX": true,
+            "responsive": true,
+            "lengthChange": true,
+            "autoWidth": false,
+            "buttons": ["copy", "excel", "print", "colvis"]
+        }).buttons().container().appendTo('#example3_wrapper .col-md-6:eq(0)');
+    });
+
+    $(document).ready(function() {
+        $("#example4").DataTable({
+            "scrollX": true,
+            "responsive": true,
+            "lengthChange": true,
+            "autoWidth": false,
+            "buttons": ["copy", "excel", "print", "colvis"]
+        }).buttons().container().appendTo('#example4_wrapper .col-md-6:eq(0)');
+    });
+
     $(function() {
         $('#datemask').inputmask('dd/mm/yyyy', {
             'placeholder': 'dd/mm/yyyy'
         });
     })
+
+
+     $(document).ready(function() {
+
+        $("#m_pel_data_pegawai").change(function() {
+            console.log('123');
+            $.ajax({
+                type: "POST", 
+                url: "<?=base_url()?>Pelatihan/show_data_pegawai", 
+                data: {
+                    m_pel_data_pegawai: $("#m_pel_data_pegawai").val()
+                }, 
+                dataType: "json",
+                beforeSend: function(e) {
+                    if (e && e.overrideMimeType) {
+                        e.overrideMimeType("application/json;charset=UTF-8");
+                    }
+                },
+                success: function(response) { // Ketika proses pengiriman berhasil
+                    console.log(response);
+                    // lalu munculkan kembali combobox kotanya
+                    $("#m_pel_nip_pegawai").val(response.val_nip).show();
+                    $("#m_pel_nama_pegawai").val(response.val_nama).show();
+                    $("#m_pel_lokasi_kerja").val(response.val_lokasi_kerja).show();
+                    $("#m_pel_profesi").val(response.val_profesi).show();
+
+                },
+                error: function(xhr, ajaxOptions, thrownError) { // Ketika ada error
+                    alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError); // Munculkan alert error
+                }
+            });
+        });
+    });
+
+
+
+
+function number_format(number, decimals, dec_point, thousands_sep) {
+    // *     example: number_format(1234.56, 2, ',', ' ');
+    // *     return: '1 234,56'
+    number = (number + "").replace(",", "").replace(" ", "");
+    var n = !isFinite(+number) ? 0 : +number,
+        prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+        sep = typeof thousands_sep === "undefined" ? "," : thousands_sep,
+        dec = typeof dec_point === "undefined" ? "." : dec_point,
+        s = "",
+        toFixedFix = function(n, prec) {
+            var k = Math.pow(10, prec);
+            return "" + Math.round(n * k) / k;
+        };
+    // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+    s = (prec ? toFixedFix(n, prec) : "" + Math.round(n)).split(".");
+    if (s[0].length > 3) {
+        s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+    }
+    if ((s[1] || "").length < prec) {
+        s[1] = s[1] || "";
+        s[1] += new Array(prec - s[1].length + 1).join("0");
+    }
+    return s.join(dec);
+}
 </script>
 
 </body>

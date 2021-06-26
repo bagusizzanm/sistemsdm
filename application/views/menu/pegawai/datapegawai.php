@@ -33,35 +33,38 @@
                             <th>Profesi</th>
                             <th>Jabatan Struktural</th>
                             <th>Jabatan Fungsional</th>
-                            <th>Status Kepegawaian</th>
+                            <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
-                    <?php
-                    $no = 1;
-                    foreach ($datapegawai as $row) { ?>
-                        <tbody>
-                            <td style="text-align: center;background-color: white;"><?= $no++; ?></td>
-                            <td style="background-color: white;"><?= $row->nip; ?></td>
-                            <td style="background-color: white;"><?= $row->nama; ?></td>
-                            <td style="background-color: white;"><?= $row->lokasi; ?></td>
-                            <td style="background-color: white;"><?= $row->profesi; ?></td>
-                            <td style="background-color: white;"><?= $row->jstruktur; ?></td>
-                            <td style="background-color: white;"><?= $row->jfungsi; ?></td>
-                            <td style="background-color: white;"><?= $row->status; ?></td>
-                            <td style="text-align: center;background-color: white;">
-                                <a href="<?= base_url('pegawai/detailPegawai'); ?>" title="Detail" class="btn btn-info btn-sm mr-1">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                                <a href="<?= base_url('pegawai/editPegawai'); ?>" title="Ubah" class="btn btn-success btn-sm mr-1">
-                                    <i class="fa fa-edit"></i>
-                                </a>
-                                <a href="" onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn btn-danger btn-sm">
-                                    <i class="fa fa-trash"></i>
-                            </td>
-
-                        </tbody>
-                    <?php } ?>
+                    <tbody>
+                        <?php
+                        $no = 1;
+                        foreach ($datapegawai as $row) { ?>
+                            <tr>
+                                <td style="text-align: center;background-color: white;"><?= $no++; ?></td>
+                                <td style="background-color: white;"><?= $row['pe_nip']?></td>
+                                <td style="background-color: white;"><?= $row['pe_nama']?></td>
+                                <td style="background-color: white;"><?= $row['kpe_lokasi_kerja']?></td>
+                                <td style="background-color: white;"><?= $row['kpe_profesi']?></td>
+                                <td style="background-color: white;"><?= $row['kpe_jabatan_struktural']?></td>
+                                <td style="background-color: white;"><?= $row['kpe_jabatan_fungsional']?></td>
+                                <td style="background-color: white;"><?= $row['kpe_status']?></td>
+                                <td style="text-align: center;background-color: white;">
+                                    <a href="<?= base_url("pegawai/detailPegawai/");?><?= $row['pe_nip']?>" title="Detail" class="btn btn-info btn-sm">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                    <!-- <a href="<?= base_url('pegawai/editPegawai'); ?>" title="Ubah" class="btn btn-success btn-sm">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                    <a href="" onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn btn-danger btn-sm">
+                                        <i class="fa fa-trash"></i>
+                                    </a> -->
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                    
                 </table>
             </div>
         </div>

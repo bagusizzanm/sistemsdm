@@ -14,7 +14,7 @@
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
-
+    <?= $this->session->flashdata('message');?>
 
     <div class="card card-lightblue mx-3">
         <div class="card-header ">
@@ -23,7 +23,7 @@
         <!-- /.card-header -->
         <div class="card-body elevation-4">
             <div class="table-responsive">
-                <table id="example1" class="display table table-striped">
+                <table id="example1" class="display table table-bordered table-striped">
                     <thead>
                         <tr class="table-primary" style="text-align: center;">
                             <th>No.</th>
@@ -38,23 +38,30 @@
                     </thead>
 
                     <tbody>
-                        <td style="text-align: center;background-color: white;"></td>
-                        <td style="background-color: white;"></td>
-                        <td style="background-color: white;"></td>
-                        <td style="background-color: white;"></td>
-                        <td style="background-color: white;"></td>
-                        <td style="background-color: white;"></td>
-                        <td style="background-color: white;"></td>
-                        <td style="background-color: white;" class="text-center">
-                            <a href="<?= base_url('pelatihan/'); ?>" title="Detail" class="btn btn-info btn-sm mr-1">
-                                <i class="fa fa-eye"></i>
-                            </a>
-                            <a href="<?= base_url('pelatihan/'); ?>" title="Ubah" class="btn btn-success btn-sm mr-1">
-                                <i class="fa fa-edit"></i>
-                            </a>
-                            <a href="" onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn btn-danger btn-sm">
-                                <i class="fa fa-trash"></i>
-                        </td>
+                        <?php
+                            $no = 1;
+                            foreach ($datapelatihan as $row) { ?>
+                        <tr>
+                            <td style="text-align: center;background-color: white;"><?= $no++; ?></td>
+                            <td style="background-color: white;"><?= $row['pe_nip']?></td>
+                            <td style="background-color: white;"><?= $row['pe_nama']?></td>
+                            <td style="background-color: white;"><?= $row['pel_tipe']?></td>
+                            <td style="background-color: white;"><?= $row['pel_nama']?></td>
+                            <td style="background-color: white;"><?= date('d-m-Y', strtotime($row['pel_tanggal_mulai']))?></td>
+                            <td style="background-color: white;"><?= date('d-m-Y', strtotime($row['pel_tanggal_selesai']))?></td>
+                            <td style="background-color: white; text-align: center;">
+                                <!-- <a href="<?= base_url('pelatihan/'); ?>" title="Detail" class="btn btn-info btn-sm">
+                                    <i class="fa fa-eye"></i>
+                                </a> -->
+                                <!-- <a href="<?= base_url('pelatihan/'); ?>" title="Ubah" class="btn btn-success btn-sm">
+                                    <i class="fa fa-edit"></i>
+                                </a> -->
+                                <a href="<?= base_url() ?>Pelatihan/p_delete_pelatihan_pegawai/<?=$row['fk_pe_nip']?>/<?=$row['pel_id']?>" onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn btn-danger btn-sm">
+                                                        <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <?php } ?>
                     </tbody>
 
                     </tfoot>

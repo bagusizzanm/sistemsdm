@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?= base_url('homepage'); ?>" class="brand-link">
-        <img src="<?= base_url(); ?>assets/img/logo.jpg" alt="logo" class="brand-image">
+        <img src="<?= base_url(); ?>assets/img/logo.png" alt="logo" class="brand-image">
         <span class="brand-text font-weight-light"></span>
     </a>
 

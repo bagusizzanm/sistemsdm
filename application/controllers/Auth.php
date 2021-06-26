@@ -37,6 +37,12 @@ class Auth extends CI_Controller
 
         if ($user) {
             if ($cek) {
+                $data = [
+                    'session_username' => $user['username'],
+                ];
+                // Pembuatan Data Session
+                $this->session->set_userdata($data);
+
                 redirect('homepage');
             } else {
                 $this->session->set_flashdata('alert', '<div class="alert alert-danger" role="alert">
