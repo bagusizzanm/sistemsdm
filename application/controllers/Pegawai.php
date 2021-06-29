@@ -36,6 +36,27 @@ class Pegawai extends CI_Controller
         $this->load->view('templates/footer');
     }
 
+    public function p_delete_pegawai($id_pegawai)
+    {
+        $this->M_pegawai->deleteDataByID('bank','fk_pe_nip',$id_pegawai);
+        $this->M_pegawai->deleteDataByID('pendidikan','fk_pe_nip',$id_pegawai);
+        $this->M_pegawai->deleteDataByID('dokumen','fk_pe_nip',$id_pegawai);
+        $this->M_pegawai->deleteDataByID('keluarga','fk_pe_nip',$id_pegawai);
+        $this->M_pegawai->deleteDataByID('kepegawaian','fk_pe_nip',$id_pegawai);
+        $this->M_pegawai->deleteDataByID('pelatihan','fk_pe_nip',$id_pegawai);
+        $this->M_pegawai->deleteDataByID('pegawai','pe_nip',$id_pegawai);
+        $this->session->set_flashdata('message','
+            <div class="alert alert-warning alert-dismissible fade show text-xs" role="alert">
+                <h6 class="alert-heading">Delete Success</h6>
+                Data Pegawai berhasil dihapus didalam sistem!
+                <button class="close" type="button" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>');
+
+        redirect('Pegawai');
+    }
+
     public function detailPegawai($id_pegawai)
     {
         $data['detail_pegawai'] = $this->M_pegawai->getDetailPegawai($id_pegawai);

@@ -15,7 +15,7 @@
         </div><!-- /.container-fluid -->
     </div>
 
-
+    <?= $this->session->flashdata('message');?>
     <div class="card card-blue mx-3">
         <div class="card-header ">
             <a href="<?= base_url('pegawai/addPegawai'); ?>" class="btn btn-light text-dark"><i class="fa fa-edit"></i> Tambah Data</a>
@@ -56,10 +56,13 @@
                                     </a>
                                     <!-- <a href="<?= base_url('pegawai/editPegawai'); ?>" title="Ubah" class="btn btn-success btn-sm">
                                         <i class="fa fa-edit"></i>
-                                    </a>
-                                    <a href="" onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn btn-danger btn-sm">
-                                        <i class="fa fa-trash"></i>
                                     </a> -->
+                                    <a href="<?= base_url() ?>Pegawai/p_delete_pegawai/<?=$row['pe_nip']?>" onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn btn-danger btn-sm">
+                                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                    <!-- <a href="" onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn btn-danger btn-sm">
+                                        <i class="fa fa-trash"></i>
+                                    </a>  -->
                                 </td>
                             </tr>
                         <?php } ?>
